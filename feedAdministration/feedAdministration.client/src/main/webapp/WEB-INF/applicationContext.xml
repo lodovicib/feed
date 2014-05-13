@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	<context:property-placeholder location="classpath:feedAdministration.client.properties" />
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="org.postgresql.Driver" />
+		<property name="url"
+			value="jdbc:postgresql://${db.host}:${db.port}/${db.name}" />
+		<property name="username" value="${db.username}" />
+		<property name="password" value="${db.userpassword}" />
+	</bean>
+	
+		<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="annotatedClasses">
+			<list>
+				<!--  <value>com.telespazio.earthcat.marsur.pojo.MarSurUser</value>
+				<value>com.telespazio.earthcat.marsur.pojo.MarSurGroup</value>
+				<value>com.telespazio.earthcat.hibernate.feature.DBFeature</value>
+				<value>com.telespazio.earthcat.hibernate.feature.EoFeature</value>
+				<value>com.telespazio.earthcat.hibernate.feature.MissionFeature
+				</value>
+				<value>com.telespazio.earthcat.hibernate.feature.DetectionFeature
+				</value>
+				<value>com.telespazio.earthcore.eo.BandStatistics</value>-->
+			</list>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>dataset.hbm.xml</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.bytecode.use_reflection_optimizer">false</prop>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.connection.driver_class">${hibernate.connection.driver_class}</prop>
+				<prop key="hibernate.search.autoregister_listeners">false</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.c3p0.min_size">2</prop>
+				<prop key="hibernate.c3p0.max_size">10</prop>
+				<prop key="hibernate.c3p0.timeout">1800</prop>
+				<prop key="hibernate.c3p0.max_statements">50</prop>
+				<prop key="connection.autoReconnect">true</prop>
+				<prop key="connection.autoReconnectForPools">true</prop>
+				<prop key="connection.is-connection-validation-required">true</prop>
+				<prop key="hibernate.c3p0.maxAdministrativeTaskTime">50</prop>
+				<!-- UTF-8 -->
+				<prop key="hibernate.connection.useUnicode">true</prop>
+				<prop key="hibernate.connection.characterEncoding">utf-8</prop>
+
+				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+			</props>
+		</property>
+	</bean>
+</beans>
