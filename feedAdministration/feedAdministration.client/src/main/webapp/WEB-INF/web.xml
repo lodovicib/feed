@@ -40,9 +40,9 @@ org.springframework.web.context.ContextLoaderServlet
 </servlet>-->
 
 
-<!--  <listener>
-        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    </listener>-->
+  <listener>
+        <listener-class>org.springframework.web.context.ContextLoader</listener-class>
+    </listener>
  
     <!-- MVC Servlet - see sample-servlet.xml for specific config -->
     <servlet>
