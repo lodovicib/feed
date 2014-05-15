@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.feedAdministration.hibernate.domain">
+    
+    <class name="File" table="t_db_file">
+        <id name="id" column="ID_FILE">
+            <generator class="native"/>
+        </id>
+        <property name="name" type="string" column="NAME_FILE"/>
+        <property name="status" type="string" column="STATUS_FILE"/>
+        <property name="message" type="string" column="MESSAGE_FILE"/>
+        <property name="date" type="timestamp" column="DATE_FILE"/>
+    </class>
+</hibernate-mapping>

@@ -1,8 +1,15 @@
-package feedAdministrationTest.dispatch;
+package feedAdministration.dispatch;
 
 
+import java.util.Date;
+import java.util.Iterator;
 import java.util.logging.Logger;
 
+import org.feedAdministration.hibernate.domain.File;
+import org.feedAdministration.util.HibernateUtil;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +27,37 @@ public class GetInfoController {
     @RequestMapping(value="/getinfo.html",method = RequestMethod.GET)
     public String getInfos(ModelMap model){
     	 logger.info("method getInfos called in the controller");
+    	 
+    	 SessionFactory sf = HibernateUtil.createSessionFactory();
+         Session session = sf.openSession();
+         session.beginTransaction();
+         
+         File f1 = new File("File One", "OK", new Date());
+         File f2 = new File("File Two", true,"ceci est un message", new Date());
+         File f3 = new File("File Treeeee", "NOK", new Date());
+         File f4 = new File("File fouuuur", false,"ceci est un message nul", new Date());
+         session.persist(f1);
+         session.persist(f2);
+         session.persist(f3);
+         session.persist(f4);
+
+         session.getTransaction().commit();
+     	
+         try { 
+         	Query query =  session.createQuery("FROM File"); 
+         	//query.setString("nom", "nom2");
+         	Iterator<?> it = query.iterate(); 
+         	while (it.hasNext()) { 
+         		File file = (File) it.next();
+         		model.addAttribute("infos",new String("Name = " + file.getName() + 
+         				" Status = " + file.getStatus() + " Message = " + file.getMessage()
+         				+ " Date = " + file.getDate())); 
+         	}
+         } finally { 
+           session.close(); 
+         } 
+         
+        sf.close(); 
         model.addAttribute("infos",new String("\tL'environnement Spring MVC est OK"));
         return null;
     }

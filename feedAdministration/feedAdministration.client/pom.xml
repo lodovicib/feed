@@ -84,9 +84,14 @@
 			<artifactId>spring-security-config</artifactId>
 			<version>${spring.security.version}</version>
 		</dependency>
-</dependencies>
-
-
+			
+		
+		<dependency>
+			<groupId>feedAdmin</groupId>
+			<artifactId>feedAdministration.hibernate</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
 
 	
  <!--  <dependencies>

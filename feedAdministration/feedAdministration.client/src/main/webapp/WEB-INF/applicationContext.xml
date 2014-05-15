@@ -18,27 +18,14 @@
 		<property name="password" value="${db.userpassword}" />
 	</bean>
 	
-		<bean id="sessionFactory"
+ 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="annotatedClasses">
+		<property name="mappingResources">
 			<list>
-				<!--  <value>com.telespazio.earthcat.marsur.pojo.MarSurUser</value>
-				<value>com.telespazio.earthcat.marsur.pojo.MarSurGroup</value>
-				<value>com.telespazio.earthcat.hibernate.feature.DBFeature</value>
-				<value>com.telespazio.earthcat.hibernate.feature.EoFeature</value>
-				<value>com.telespazio.earthcat.hibernate.feature.MissionFeature
-				</value>
-				<value>com.telespazio.earthcat.hibernate.feature.DetectionFeature
-				</value>
-				<value>com.telespazio.earthcore.eo.BandStatistics</value>-->
+				<value>feedadministration_database.hbm.xml</value>
 			</list>
 		</property>
-		<!-- <property name="mappingResources">
-			<list>
-				<value>dataset.hbm.xml</value>
-			</list>
-		</property> -->
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.bytecode.use_reflection_optimizer">false</prop>
@@ -57,6 +44,8 @@
 				<!-- UTF-8 -->
 				<prop key="hibernate.connection.useUnicode">true</prop>
 				<prop key="hibernate.connection.characterEncoding">utf-8</prop>
+
+				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
 			</props>
 		</property>
 	</bean>
