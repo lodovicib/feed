@@ -34,11 +34,11 @@
 				<value>com.telespazio.earthcore.eo.BandStatistics</value>-->
 			</list>
 		</property>
-		<property name="mappingResources">
+		<!-- <property name="mappingResources">
 			<list>
 				<value>dataset.hbm.xml</value>
 			</list>
-		</property>
+		</property> -->
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.bytecode.use_reflection_optimizer">false</prop>
@@ -57,8 +57,6 @@
 				<!-- UTF-8 -->
 				<prop key="hibernate.connection.useUnicode">true</prop>
 				<prop key="hibernate.connection.characterEncoding">utf-8</prop>
-
-				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
 			</props>
 		</property>
 	</bean>
