@@ -13,6 +13,7 @@
 <% 
 	final String path=request.getContextPath();
   	final String infos=(String)request.getAttribute("infos");
+  	final int count =  Integer.valueOf(((String)request.getAttribute("count")));
  %>
 <h1>
 <% if( infos!=null && ! "".equals(infos) ) { %>
@@ -21,5 +22,11 @@
  <%="Votre environnement ne semble pas être OK" %>
  <%}%>
 </h1>
+<p>
+<% for( int i=0; i <  count; i++) { %>
+<%=(String)request.getAttribute("line"+i)%>
+<br />
+<%} %>
+</p>
 </body>
 </html>

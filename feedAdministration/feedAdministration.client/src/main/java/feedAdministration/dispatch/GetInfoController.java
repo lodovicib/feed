@@ -30,7 +30,7 @@ public class GetInfoController {
     	 
     	 SessionFactory sf = HibernateUtil.createSessionFactory();
          Session session = sf.openSession();
-         session.beginTransaction();
+      /*  session.beginTransaction();
          
          File f1 = new File("File One", "OK", new Date());
          File f2 = new File("File Two", true,"ceci est un message", new Date());
@@ -41,24 +41,26 @@ public class GetInfoController {
          session.persist(f3);
          session.persist(f4);
 
-         session.getTransaction().commit();
-     	
+         session.getTransaction().commit();*/
+         model.addAttribute("infos",new String("\tL'environnement Spring MVC est OK"));
+         
          try { 
          	Query query =  session.createQuery("FROM File"); 
-         	//query.setString("nom", "nom2");
-         	Iterator<?> it = query.iterate(); 
+         	Iterator<?> it = query.iterate();
+         	int i=0;
          	while (it.hasNext()) { 
          		File file = (File) it.next();
-         		model.addAttribute("infos",new String("Name = " + file.getName() + 
+         		model.addAttribute("line"+ i++, new String(("Name = " + file.getName() + 
          				" Status = " + file.getStatus() + " Message = " + file.getMessage()
-         				+ " Date = " + file.getDate())); 
+         				+ " Date = " + file.getDate()))); 
          	}
+         	model.addAttribute("count", new String(String.valueOf(i)));
          } finally { 
            session.close(); 
          } 
          
         sf.close(); 
-        model.addAttribute("infos",new String("\tL'environnement Spring MVC est OK"));
+       
         return null;
     }
 }
