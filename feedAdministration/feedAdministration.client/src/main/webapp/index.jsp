@@ -1,7 +1,7 @@
 <html>
 <!-- index.jsp  -->
 <head>
-<title>Spring mvc sample</title>
+<title>Feed Administration</title>
 </head>
 <body>
 <% 

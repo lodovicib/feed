@@ -36,6 +36,8 @@
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
         <url-pattern>*.html</url-pattern>
+        <url-pattern>*.js</url-pattern>
+		<url-pattern>*.css</url-pattern>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 </web-app>

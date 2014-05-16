@@ -50,9 +50,13 @@ public class GetInfoController {
          	int i=0;
          	while (it.hasNext()) { 
          		File file = (File) it.next();
-         		model.addAttribute("line"+ i++, new String(("Name = " + file.getName() + 
-         				" Status = " + file.getStatus() + " Message = " + file.getMessage()
-         				+ " Date = " + file.getDate()))); 
+         		if (file.getMessage() != null)
+         		model.addAttribute("line"+ i++, new String(("<tr><td>" + file.getName() + 
+         				"</td><td>" + file.getStatus() + "</td><td>" + file.getMessage()
+         				+ "</td><td>" + file.getDate() + "</td></tr>")));
+         		else
+         			model.addAttribute("line"+ i++, new String(("<tr><td>" + file.getName() + 
+             				"</td><td>" + file.getStatus() + "</td><td></td><td>" + file.getDate() + "</td></tr>")));
          	}
          	model.addAttribute("count", new String(String.valueOf(i)));
          } finally { 
