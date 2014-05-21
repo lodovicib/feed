@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/earthsdi/!svn/ver/680/trunk/Development/EarthSdi/earthcat.core/src/main/java/com/telespazio/earthcat/core/exceptions
+END
+NotFoundRoleException.java
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/earthsdi/!svn/ver/156/trunk/Development/EarthSdi/earthcat.core/src/main/java/com/telespazio/earthcat/core/exceptions/NotFoundRoleException.java
+END
+NotFoundFeatureException.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/earthsdi/!svn/ver/117/trunk/Development/EarthSdi/earthcat.core/src/main/java/com/telespazio/earthcat/core/exceptions/NotFoundFeatureException.java
+END
+AuthorizationException.java
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/earthsdi/!svn/ver/156/trunk/Development/EarthSdi/earthcat.core/src/main/java/com/telespazio/earthcat/core/exceptions/AuthorizationException.java
+END
+NotFoundDatasetException.java
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/earthsdi/!svn/ver/41/trunk/Development/EarthSdi/earthcat.core/src/main/java/com/telespazio/earthcat/core/exceptions/NotFoundDatasetException.java
+END
+NotFoundAccessRightException.java
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/earthsdi/!svn/ver/680/trunk/Development/EarthSdi/earthcat.core/src/main/java/com/telespazio/earthcat/core/exceptions/NotFoundAccessRightException.java
+END
+RepositoryException.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/earthsdi/!svn/ver/74/trunk/Development/EarthSdi/earthcat.core/src/main/java/com/telespazio/earthcat/core/exceptions/RepositoryException.java
+END
+NotFoundUserException.java
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/earthsdi/!svn/ver/655/trunk/Development/EarthSdi/earthcat.core/src/main/java/com/telespazio/earthcat/core/exceptions/NotFoundUserException.java
+END
+ServiceUnavailableException.java
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/earthsdi/!svn/ver/16/trunk/Development/EarthSdi/earthcat.core/src/main/java/com/telespazio/earthcat/core/exceptions/ServiceUnavailableException.java
+END
+ResourceNotFoundException.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/earthsdi/!svn/ver/16/trunk/Development/EarthSdi/earthcat.core/src/main/java/com/telespazio/earthcat/core/exceptions/ResourceNotFoundException.java
+END
+BadFeatureRequestException.java
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/earthsdi/!svn/ver/118/trunk/Development/EarthSdi/earthcat.core/src/main/java/com/telespazio/earthcat/core/exceptions/BadFeatureRequestException.java
+END

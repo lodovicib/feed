@@ -9,44 +9,46 @@ public class File {
     private String name;
     private String status;
     private String message;
-    private Date date;
-
-    public File() {}
+	private Date date;
+	
+    public File() {
+    	date = new Date();
+    }
     
-    public File(String _nom, String _status, String _message, Date _date) {
+    public File(String _nom, String _status, String _message) {
     	name = _nom;
     	status = _status;
     	message = _message;
-    	date = _date;
+    	date = new Date();
     }
 
     
     /* si on met un bool au lieu d'un string pour le status*/
-    public File(String _nom, boolean _status, String _message, Date _date) {
+    public File(String _nom, boolean _status, String _message) {
     	name = _nom;
     	status = "NOK";
     	if (_status)
     	status = "OK";
     	message = _message;
-    	date = _date;
+    	date = new Date();
     }
 
     /* si on ne met pas de message et un bool en status */
-    public File(String _nom, boolean _status, Date _date) {
+    public File(String _nom, boolean _status) {
     	name = _nom;
     	status = "NOK";
     	if (_status)
     	status = "OK";
     	message = null;
-    	date = _date;
+    	date = new Date();
     }
     
     /* si on ne met pas de message */
-    public File(String _nom, String _status, Date _date) {
+    public File(String _nom, String _status) {
     	name = _nom;
     	status = _status;
     	message = null;
-    	date = _date;
+    	date = new Date();
     }
     
     public Long getId() {
@@ -56,7 +58,6 @@ public class File {
     private void setId(Long id) {
         this.id = id;
     }
-
 	public String getName() {
 		return name;
 	}
@@ -88,4 +89,17 @@ public class File {
 	public void setDate(Date date) {
 		this.date = date;
 	}
+	
+	public void replaceData(File fileToReplace) {
+		if (fileToReplace.getName() != null)
+			if (getName() == null || !getName().equals(fileToReplace.getName()))
+				setName(fileToReplace.getName());
+		if (fileToReplace.getStatus() != null)
+			if (getStatus() == null || !getStatus().equals(fileToReplace.getStatus()))
+				setStatus(fileToReplace.getStatus());
+		if (fileToReplace.getMessage() != null)
+			if (getMessage() == null || !getMessage().equals(fileToReplace.getMessage()))
+				setMessage(fileToReplace.getMessage());
+	}
+	
 }

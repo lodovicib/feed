@@ -28,9 +28,8 @@
 			<version>2.5</version>
 			<scope>provided</scope>
 		</dependency>
-
 		<!-- SPRING DEP -->
-		<dependency>
+<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.framework.version}</version>
@@ -89,6 +88,11 @@
 		<dependency>
 			<groupId>feedAdmin</groupId>
 			<artifactId>feedAdministration.hibernate</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>feedAdmin</groupId>
+			<artifactId>feedAdministration.core</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>

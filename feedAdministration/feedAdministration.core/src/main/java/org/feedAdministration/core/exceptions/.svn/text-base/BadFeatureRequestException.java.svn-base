@@ -1,0 +1,45 @@
+package com.telespazio.earthcat.core.exceptions;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@ResponseStatus(value = HttpStatus.BAD_REQUEST)
+@SuppressWarnings("serial")
+public class BadFeatureRequestException extends Exception {
+
+	/**
+     * Parameterized constructor.
+     * 
+     * @param message
+     *            the exception message
+     */
+    public BadFeatureRequestException(String message) {
+
+	super(message);
+    }
+
+    /**
+     * Parameterized constructor.
+     * 
+     * @param message
+     *            the exception message
+     * @param exception
+     *            the parent exception
+     */
+    public BadFeatureRequestException(String message, Exception exception) {
+
+	super(message, exception);
+    }
+
+    /**
+     * Parameterized constructor.
+     * 
+     * @param exception
+     *            the parent exception
+     */
+    public BadFeatureRequestException(Exception exception) {
+
+    	super(exception);
+    }
+}
+

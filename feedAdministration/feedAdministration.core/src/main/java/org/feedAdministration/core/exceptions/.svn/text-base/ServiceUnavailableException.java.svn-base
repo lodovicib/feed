@@ -1,0 +1,58 @@
+/********************************************************
+ * 
+ * This file is from TELESPAZIO java web dev platform.
+ *
+ * Project - eocat.core
+ *
+ * Copyright (C) 2013 TELESPAZIO France
+ * BU SSA. All rights reserved
+ *
+ ********************************************************/
+package com.telespazio.earthcat.core.exceptions;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+/**
+ * @author mpellerin
+ * 
+ */
+@ResponseStatus(value = HttpStatus.SERVICE_UNAVAILABLE)
+@SuppressWarnings("serial")
+public class ServiceUnavailableException extends Exception {
+
+    /**
+     * Parameterized constructor.
+     * 
+     * @param message
+     *            the exception message
+     */
+    public ServiceUnavailableException(String message) {
+
+	super(message);
+    }
+
+    /**
+     * Parameterized constructor.
+     * 
+     * @param message
+     *            the exception message
+     * @param exception
+     *            the parent exception
+     */
+    public ServiceUnavailableException(String message, Exception exception) {
+
+	super(message, exception);
+    }
+
+    /**
+     * Parameterized constructor.
+     * 
+     * @param exception
+     *            the parent exception
+     */
+    public ServiceUnavailableException(Exception exception) {
+
+	super(exception);
+    }
+}

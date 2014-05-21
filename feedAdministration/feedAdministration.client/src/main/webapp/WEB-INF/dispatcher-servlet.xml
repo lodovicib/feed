@@ -23,12 +23,11 @@
     <context:annotation-config/>
 	
 	<context:property-placeholder location="classpath:feedAdministration.client.properties"/>	
-	
+	<context:component-scan base-package="org.feedAdministration.core.json"/>
  	<mvc:annotation-driven>
 	    <mvc:message-converters register-defaults="true">
 	        <bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
 	        <bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter"/>
-
 	    </mvc:message-converters>
 	</mvc:annotation-driven>
 	
@@ -37,6 +36,6 @@
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
- 
-  <mvc:resources location="/, classpath:/META-INF/public-resources/" mapping="/**" />
+  <mvc:resources location="/, classpath:/META-INF/public-resources/" mapping="/**" /> 
+  <!-- <mvc:resources location="/WEB-INF/pages/" mapping="/WEB-INF/pages/**" />-->
  </beans>
